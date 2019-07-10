@@ -1,0 +1,751 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/1.5 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif;
+    background-color: $darkest;
+}
+
+.wrapper {
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+      width: 80%;
+      margin: 0 10%;
+    }
+
+    h1 {
+      color: $white;
+    }
+}
+
+/* Make the body 100% of the browser viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+    font-family: 'Roboto Condensed', Helvetica, Helvetica Neue, Arial, sans-serif;
+    font-weight: 700;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* =Preloader */
+#preloader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 101;
+    background-color: $darkest;
+    color: $lightest;
+    .txt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .txt-perc {
+        font-size: 35px;
+        font-family: 'Roboto Condensed', Helvetica, Helvetica Neue, Arial, sans-serif;
+        opacity: 1;
+        margin: 0 0 6px 0;
+        max-width: 400px;
+        text-align: center;
+    }
+    .progress {
+        width: 100px;
+        height: 3px;
+        background-color: rgba(255,255,255,0.2);
+        margin: 0 auto 15px auto;
+        span {
+            display: block;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255,255,255,0.8);
+        }
+    }
+    &.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+.is-loading {
+    overflow: hidden;
+}
+
+/* =Header */
+.header-container {
+  position: relative;
+    text-align: center;
+    color: $lightest;
+    .wrapper {
+        padding-top: 120px;
+        z-index: 2;
+        position: relative;
+    }
+    .bcg {
+        transition: transform 4s ease-out;
+        transform: scale(1.05);
+        transform-origin: top center;
+    }
+    &.is-loaded {
+        .bcg {
+            transform: scale(1);
+        }
+    }
+}
+
+.bcg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.bcg-img {
+    // background: no-repeat center center;
+    // background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .header-container & {
+        background-image: url(/interactive/2019/07/space-week/images/day05/01.jpg);
+        background-size: cover;
+    }
+    // #slide01 & {
+    //   background-image: url(/interactive/2019/07/space-week/images/day05/01b-8909250_orig.jpg);
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   background-size: cover;
+    // }
+    // #slide02 & {
+    //     background: url(/interactive/2019/07/space-week/images/day05/02.jpg) no-repeat center center;
+    //     background-size: cover;
+    // }
+    // #slide03 & {
+    //     background: url(/interactive/2019/07/space-week/images/day05/02-Space_US_Programs_ApolloSaturn11_Flight_001.jpg) no-repeat center center;
+    //     background-size: cover;
+    //     opacity: 0.7;
+    // }
+    //
+    // #slide04 & {
+    //     background: url(/interactive/2019/07/space-week/images/day05/03.jpg) no-repeat center center;
+    //     background-size: cover;
+    //     opacity: 0.7;
+    // }
+    //
+    // #slide05 & {
+    //     background: url(/interactive/2019/07/space-week/images/day05/11-President_Nixon_welcomes_the_Apollo_11_astronauts_aboard_the_U.S.S._Hornet.jpg) no-repeat center center;
+    //     background-size: cover;
+    //     opacity: 0.7;
+    // }
+}
+
+.bcg-img {
+  background: no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  #slide01 & {
+    background-image: url(/interactive/2019/07/space-week/images/day05/01b-8909250_orig.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  #slide02 & {
+      background: url(/interactive/2019/07/space-week/images/day05/02.jpg) no-repeat center center;
+      background-size: cover;
+  }
+  #slide03 & {
+      background: url(/interactive/2019/07/space-week/images/day05/02-Space_US_Programs_ApolloSaturn11_Flight_001.jpg) no-repeat center center;
+      background-size: cover;
+      opacity: 0.7;
+  }
+
+  #slide04 & {
+      background: url(/interactive/2019/07/space-week/images/day05/03.jpg) no-repeat center center;
+      background-size: cover;
+      opacity: 0.7;
+  }
+
+  #slide05 & {
+      background: url(/interactive/2019/07/space-week/images/day05/11-President_Nixon_welcomes_the_Apollo_11_astronauts_aboard_the_U.S.S._Hornet.jpg) no-repeat center center;
+      background-size: cover;
+      opacity: 0.7;
+  }
+}
+
+/* =Navigation */
+nav {
+    display: none;
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    z-index: 100;
+    a {
+        display: block;
+        line-height: 25px;
+        position: relative;
+        padding-right: 20px;
+        color: $lightest;
+        text-decoration: none;
+        &:hover {
+            .nav-label {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .nav-dot {
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        background-color: transparentize($lightest,.1);
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        transform: translateY(-50%);
+        transition: all 0.3s linear;
+    }
+    .nav-label {
+        display: block;
+        opacity: 0.5;
+        visibility: hidden;
+        transform: translateX(-10px);
+        transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+    }
+    &.is-dark {
+        a {
+            color: $darkest;
+        }
+        .nav-dot {
+            background-color: transparentize($black,.5);
+        }
+    }
+    &.is-light {
+        a {
+            color: $lightest;
+        }
+        .nav-dot {
+            background-color: transparentize($lightest,.5);
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        width: auto;
+        list-style: none;
+    }
+}
+.scroll-hint {
+    color: $darkest;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 40px;
+    border: 3px $lightest solid;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', Helvetica, Helvetica Neue, Arial, sans-serif;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 2;
+}
+
+/* =Main */
+p {
+    font-size: 16px;
+}
+.fs {
+    height: 100vh;
+}
+.slide {
+    color: $lightest;
+    position: relative;
+    overflow: hidden;
+    overflow-x: hidden;
+    .wrapper {
+        padding-top: 30px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        + p {
+          display: none;
+        }
+    }
+    &#slide01 {
+        .wrapper {
+            position: absolute;
+            top: 10%;
+        }
+    }
+    &#slide02 {
+        .wrapper {
+            position: absolute;
+            bottom: 25%;
+        }
+    }
+    &#slide03 {
+        .button {
+            border-color: $lightest;
+            color: $darkest;
+            background-color: rgba(255,255,255,0.9);
+            &:hover {
+                border-color: $darkest;
+                background-color: $darkest;
+                color: $lightest;
+            }
+        }
+        .wrapper {
+            padding-top: 100px;
+        }
+    }
+    &#slide04 {
+        background-color: rgb(190, 76, 44);
+    }
+}
+.button {
+    text-decoration: none;
+    color: $lightest;
+    border: 1px transparentize($lightest,.3) solid;
+    padding: 8px 15px;
+    margin-top: 15px;
+    display: inline-block;
+    position: relative;
+    &:hover {
+        border-color: $lightest;
+        background-color: $lightest;
+        color: $black;
+    }
+}
+
+/* =Content Block */
+.content-block {
+    position: relative;
+    z-index: 9;
+    background-color: $black;
+    color: transparentize($lightest,.1);
+    .wrapper {
+        width: 100%;
+        // margin: 0;
+        padding: 30px 0;
+        text-align: left;
+
+        @media screen and (min-width: 600px) {
+          width: 80%;
+
+        }
+    }
+    .no-touch & {
+        .wrapper {
+            visibility: hidden;
+            opacity: 0;
+        }
+        &.is-active {
+            .wrapper {
+                visibility: visible;
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+}
+
+/* =Footer */
+.footer-container {
+    text-align: center;
+    font-size: 14px;
+    color: transparentize($lightest,.5);
+    background-color: #06060d;
+    h3 {
+        margin: 0;
+        padding: 20px 0;
+        font-weight: normal;
+    }
+    a {
+        color: transparentize($lightest,.5);
+    }
+}
+
+p.slideInUp.slideInUp2{
+    color: #fff;
+    padding: 20px;
+    // font-size: 16px;
+    background-color: rgba(0,0,0, 0.6);
+
+
+    .content-block & {
+      margin: 0;
+      padding: 0 20px;
+      font-size: 14px;
+
+      @media screen and (min-width: 600px) {
+        padding: 20px;
+        font-size: 1.5em;
+      }
+    }
+
+    span {
+      display: block;
+      margin-top: 20px;
+      font-style: italic;
+    }
+}
+
+/* =Simple animation up */
+.slideInUp {
+    // .no-touch & {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.7s ease-out;
+        transform: translate3d(0, 50px, 0);
+    // }
+    .is-active & {
+        visibility: visible;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    &.slideInUp2{transition-delay: 0.2s;}
+    &.slideInUp3{transition-delay: 0.4s;}
+
+    h1,
+    h2 {
+      padding: 0 20px;
+    }
+}
+
+#iht_logo {
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+
+.slide section {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-weight: 100;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    p { font-size: 1.5em; }
+    /* =Header */
+    .header-container {
+        overflow: hidden;
+        position: relative;
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -120%);
+            margin: 0;
+            padding: 0;
+        }
+        &:before {
+            font-size: 70em;
+        }
+    }
+    .scroll-hint {
+        font-size: 20px;
+    }
+    .bcg {
+        // opacity: 1;
+    }
+    .slide {
+        section {
+            max-width: 400px;
+        }
+        .wrapper {
+            padding-top: 120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            width: 100%;
+            margin: 0;
+        }
+        &#slide01,
+        &#slide02,
+        &#slide03 {
+            color: $darkest;
+            .wrapper {
+                top: 30%;
+                text-align: center;
+            }
+
+            h1 {
+              color: $white;
+            }
+            section {
+                margin: 0 auto;
+            }
+        }
+        &#slide02 {
+            color: $lightest;
+            .wrapper {
+                top: auto;
+                bottom: 25%;
+                left: 10%;
+                text-align: left;
+                transform: translate(0);
+                padding: 0;
+            }
+            section {
+                margin: 0;
+            }
+        }
+        &#slide03 {
+            .wrapper {
+                padding: 0;
+                top: 15%;
+                transform: translate(-50%, 0);
+            }
+            section {
+                margin: 0 auto;
+                max-width: 570px;
+            }
+            .button {
+                border-color: transparentize($black,.3);
+                background-color: transparent;
+                color: $darkest;
+            }
+            .bcg {
+                opacity: 1;
+            }
+        }
+
+
+    }
+    nav {
+        display: block;
+    }
+    .content-block {
+        .wrapper {
+            padding: 120px 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+}
+
+.caption {
+  // padding-top: 120px;
+  position: absolute;
+  z-index: 2;
+  bottom: 2%;
+  right: 2%;
+  // transform: translate(-50%, -50%);
+  text-align: left;
+  width: 70%;
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.6);
+  padding: 10px;
+
+  @media only screen and (min-width: 600px) {
+    width: 50%;
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+// .hidden {
+//     display: none !important;
+//     visibility: hidden;
+// }
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
